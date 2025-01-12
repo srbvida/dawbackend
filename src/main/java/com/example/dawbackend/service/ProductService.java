@@ -15,7 +15,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Entity
 @Table(name = "product")
 @EntityListeners(AuditingEntityListener.class)
-public class Product {
+public class ProductService {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,14 +24,14 @@ public class Product {
     private String description;
 
 
-    private Long price;
+    private Double price;
     private int stock;
 
-    public Product() {
+    public ProductService() {
 
     }
 
-    public Product(Long id, String name, String description, Long price, int stock) {
+    public ProductService(Long id, String name, String description, Double price, int stock) {
         this.id = id;
         this.name = name;
         this.description = description;
